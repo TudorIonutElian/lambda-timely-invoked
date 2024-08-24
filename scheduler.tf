@@ -5,6 +5,6 @@ resource "aws_cloudwatch_event_rule" "lambda_timely_invoked_schedule" {
 }
 
 resource "aws_cloudwatch_event_target" "lambda_timely_invoked_target" {
-  rule      = aws_cloudwatch_event_rule.lambda_timely_invoked_schedule.name
-  arn       = aws_lambda_function.lambda_timely_invoked_function.arn
+  rule = aws_cloudwatch_event_rule.lambda_timely_invoked_schedule.name
+  arn  = aws_lambda_function.lambda_timely_invoked_function.arn
 }
