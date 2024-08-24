@@ -22,7 +22,7 @@ jobs:
           key: ${{ secrets.VULTR_INSTANCE_KEY }}
           script: |
             if [ ! -d "lambda-timely-deploy" ]; then
-                echo "Cloning the repo $REPO_NAME"
+                echo "Cloning the repo " ${{ env.REPO_NAME }}
                 #git clone https://github.com/TudorIonutElian/$REPO_NAME.git lambda-timely-deploy
             fi
             #cd lambda-timely-deploy
