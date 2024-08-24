@@ -12,6 +12,7 @@ jobs:
     permissions: write-all
     env: 
       RUN_NUMBER: ${{ github.run_number }}
+      REPO_NAME: ${{ github.repository }}
     steps:
       - name: Login to Vultr Instance and run terraform plan
         uses: appleboy/ssh-action@master
@@ -21,9 +22,8 @@ jobs:
           key: ${{ secrets.VULTR_INSTANCE_KEY }}
           script: |
             if [ ! -d "lambda-timely-deploy" ]; then
-                REPO_NAME=$(git remote get-url origin | awk -F'github.com[:/]' '{print $2}')
                 echo "Cloning the repo $REPO_NAME"
-                #git clone https://github.com/$REPO_NAME.git lambda-timely-deploy
+                #git clone https://github.com/TudorIonutElian/$REPO_NAME.git lambda-timely-deploy
             fi
             #cd lambda-timely-deploy
             #git pull
