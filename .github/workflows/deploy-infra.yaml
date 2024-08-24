@@ -24,7 +24,7 @@ jobs:
             if [ ! -d "lambda-timely-deploy" ]; then
                 git clone https://github.com/${{ env.REPO_NAME }}.git
             fi
-            cd lambda-timely-deploy
+            cd lambda-timely-invoked
             git pull
             terraform init
             terraform plan -out=plan-${{ github.run_number }}.out
