@@ -11,6 +11,7 @@ resource "aws_cloudwatch_event_rule" "lambda_timely_invoked_schedule" {
   schedule_expression = "rate(5 minutes)"
 }
 
+
 /*
   aws_cloudwatch_event_target is a resource that creates a target for the CloudWatch Event Rule.
   The target specifies the Lambda function to be invoked by the rule.
